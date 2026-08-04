@@ -1,0 +1,12 @@
+{
+  "name": "lipia-bulk-stk",
+  "version": "1.0.0",
+  "description": "Bulk STK Push application using Lipia API v2",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: lipia-bulk-stk
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: LIPIA_API_KEY
+        sync: false

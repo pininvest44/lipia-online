@@ -8,7 +8,7 @@ const LIPIA_API_KEY = process.env.LIPIA_API_KEY;
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Helper delay to control throughput (30 req/min = 2000ms delay)
+// Helper delay to control throughput (30 req/min = 6000ms delay)
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 // Single STK Push Helper
@@ -76,9 +76,9 @@ app.post('/api/bulk-stk', async (req, res) => {
     // Stream log entry to frontend
     res.write(`data: ${JSON.stringify(logResult)}\n\n`);
 
-    // Maintain 30 req/min (2-second delay between calls)
+    // Maintain 30 req/min (6-second delay between calls)
     if (i < phoneNumbers.length - 1) {
-      await sleep(2000);
+      await sleep(6000);
     }
   }
 
